@@ -28,5 +28,11 @@ ZEND_END_MODULE_GLOBALS(gir)
 
 ZEND_EXTERN_MODULE_GLOBALS(gir)
 
+#ifdef ZTS
+# define GIR_G(v) TSRMG(gir_globals_id, zend_gobject_globals *, v)
+#else
+# define GIR_G(v) (gir_globals.v)
+#endif
+
 #endif /* PHP_GIR_H */
 
