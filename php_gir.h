@@ -9,6 +9,9 @@
 #include <girepository.h>
 #include <girffi.h>
 
+#include <zend_exceptions.h>
+#include <ext/spl/spl_exceptions.h>
+
 extern zend_module_entry gir_module_entry;
 #define phpext_gir_ptr &gir_module_entry
 
