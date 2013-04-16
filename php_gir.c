@@ -23,7 +23,6 @@ zend_module_entry gir_module_entry = {
 PHP_MINIT_FUNCTION(gobject)
 {
 	g_type_init();
-
 	return SUCCESS;
 }
 
