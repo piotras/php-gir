@@ -3,10 +3,15 @@
 
 ZEND_DECLARE_MODULE_GLOBALS(gir)
 
+zend_function_entry php_gir_functions[] = {
+	PHP_NAMED_FE(gir\\load, PHP_FN(php_gir_load), NULL)
+	{NULL, NULL, NULL}
+};
+
 zend_module_entry gir_module_entry = {
 	STANDARD_MODULE_HEADER,
 	"gir",
-	NULL,
+	php_gir_functions,
 	PHP_MINIT(gir),
 	PHP_MSHUTDOWN(gir),
 	PHP_RINIT(gir),
@@ -19,6 +24,11 @@ zend_module_entry gir_module_entry = {
 	NULL,
 	STANDARD_MODULE_PROPERTIES_EX
 };
+
+PHP_FUNCTION(php_gir_load)
+{
+
+}
 
 PHP_MINIT_FUNCTION(gobject)
 {
