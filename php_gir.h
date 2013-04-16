@@ -37,5 +37,7 @@ ZEND_EXTERN_MODULE_GLOBALS(gir)
 # define GIR_G(v) (gir_globals.v)
 #endif
 
+PHP_FUNCTION(php_gir_load);
+
 #endif /* PHP_GIR_H */
 
